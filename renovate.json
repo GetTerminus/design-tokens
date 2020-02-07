@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "assignees": ["benjamincharity"],
+  "masterIssue": "true",
+  "packageRules": [
+    {
+      "packagePatterns": ["jest"],
+      "groupName": "Jest Packages"
+    },
+    {
+      "packagePatterns": ["^@semantic-release"],
+      "groupName": "SemanticRelease Packages"
+    },
+    {
+      "packagePatterns": ["stylelint"],
+      "groupName": "StyleLint Packages"
+    }
+  ],
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "rebaseLabel": "Action: rebase",
+  "rebaseConflictedPrs": false,
+  "rebaseStalePrs": false,
+  "reviewers": ["benjamincharity"],
+  "semanticCommits": true,
+  "semanticCommitScope": "Packages",
+  "semanticCommitType": "chore",
+  "schedule": ["every weekend"],
+  "stabilityDays": 1,
+  "vulnerabilityAlerts": {
+    "labels": ["Focus: security"],
+    "assignees": ["team:uxe"]
+  }
+}
