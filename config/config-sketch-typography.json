@@ -1,0 +1,17 @@
+{
+  "source": [
+    "properties/**/*.js",
+    "ui-library/**/compound.js"
+  ],
+  "platforms": {
+    "sketchTypography": {
+      "buildPath": "build/sketch/",
+      "files": [{
+        "destination": "typographyDesignTokens.sketchpalette",
+        "format": "sketch/palette/v2"
+      }],
+      "prefix": "ts",
+      "transformGroup": "ts/sketch"
+    }
+  }
+}

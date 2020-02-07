@@ -1,0 +1,50 @@
+{
+  "name": "@terminus/design-tokens",
+  "version": "1.0.0",
+  "description": "TODO",
+  "homepage": "https://github.com/GetTerminus/design-tokens",
+  "author": "@terminus",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GetTerminus/design-tokens.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GetTerminus/design-tokens/issues"
+  },
+  "main": "build.js",
+  "scripts": {
+    "////////// Section: Build": "==============================",
+    "build": "node index.js",
+    "watch": "yarn run build && chokidar  \"{properties,ui-library}/**/*.js\" -c \"yarn run build\"",
+    "clean": "rm -rf build",
+    "lint": "npx eslint \"**/*.js\" --config .eslintrc.js",
+    "lint:fix": "yarn run lint --fix",
+    "////////// Section: Tooling": "==============================",
+    "lint-staged": "lint-staged",
+    "validate:circleci": "circleci config validate",
+    "cm": "npx git-cz",
+    "contributors:add": "npx all-contributors add",
+    "contributors:generate": "npx all-contributors generate",
+    "contributors:check": "npx all-contributors check"
+  },
+  "engines": {
+    "node": ">= 12.0.0",
+    "npm": ">= 5.0.0",
+    "yarn": ">= 1.0.0"
+  },
+  "devDependencies": {
+    "@terminus/eslint-config-frontend": "^1.1.1",
+    "@typescript-eslint/parser": "^2.19.0",
+    "all-contributors-cli": "^6.13.0",
+    "chokidar-cli": "^2.1.0",
+    "circleci": "^0.3.3",
+    "commitizen": "^4.0.3",
+    "cz-customizable": "^6.2.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "style-dictionary": "2.8.3",
+    "typescript": "^3.7.5"
+  }
+}
