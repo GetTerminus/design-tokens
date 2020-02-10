@@ -97,6 +97,9 @@ jobs:
       - *attach_workspace
       - add_ssh_keys
       - run:
+          name: Copy files for release
+          command: yarn run copy-files
+      - run:
           name: Publish Tokens
           command: npx semantic-release
 

@@ -23,13 +23,20 @@
     "////////// Section: Linting": "==============================",
     "lint:ci": "npx eslint \"**/*.js\" --config .eslintrc.js",
     "lint": "yarn run lint:ci --fix",
+    "////////// Section: Documentation": "==============================",
+    "docs": "yarn run docs:toc",
+    "docs:toc": "find . -path ./node_modules -prune -o -path ./build -prune -o -path ./.github -prune -o -path ./.git -prune -o -path ./CHANGELOG.md -prune -o -path ./CODE_OF_CONDUCT.md -prune -o -name '*.md' -print |  xargs npx doctoc --title '**Table of Contents**' --maxlevel 4",
     "////////// Section: Tooling": "==============================",
     "lint-staged": "lint-staged",
     "validate:circleci": "circleci config validate",
     "cm": "npx git-cz",
     "////////// Section: Release": "==============================",
+    "copy-files": "cp {package.json, LICENSE, README.md} build/",
     "semantic-release": "semantic-release",
     "check:next-release": "npx semantic-release --no-ci --dry-run"
+  },
+  "lint-staged": {
+    "*.js": "yarn run lint"
   },
   "husky": {
     "hooks": {
@@ -87,7 +94,7 @@
       },
       {
         "path": "@semantic-release/git",
-        "message": "📚 Add ${nextRelease.version} release notes [skip ci]"
+        "message": "Add ${nextRelease.version} release notes [skip ci]"
       }
     ],
     "publish": [
@@ -129,6 +136,7 @@
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
     "style-dictionary": "2.8.3",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "validate-commit-msg": "^2.14.0"
   }
 }
