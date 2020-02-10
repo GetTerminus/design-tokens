@@ -1,0 +1,23 @@
+{
+  "source": ["properties/**/*.js"],
+  "platforms": {
+    "css": {
+      "buildPath": "build/css/",
+      "files": [{
+        "destination": "design-tokens.css",
+        "format": "css/variables"
+      }],
+      "prefix": "ts",
+      "transformGroup": "ts/css"
+    },
+    "js": {
+      "buildPath": "build/js/",
+      "files": [{
+        "destination": "design-tokens.js",
+        "format": "javascript/es6"
+      }],
+      "prefix": "ts",
+      "transformGroup": "ts/js"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "source": [
+    "properties/**/*.js",
+    "ui-library-tokens/**/*.js"
+  ],
+  "platforms": {
+    "css": {
+      "buildPath": "build/css/",
+      "files": [{
+        "destination": "library-design-tokens.css",
+        "format": "css/variables"
+      }],
+      "prefix": "ts",
+      "transformGroup": "ts/css"
+    }
+  }
+}
