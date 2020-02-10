@@ -1,7 +1,7 @@
 {
   "source": [
     "properties/**/*.js",
-    "ui-library/**/compound.js"
+    "ui-library-tokens/**/compound.js"
   ],
   "platforms": {
     "sketchTypography": {

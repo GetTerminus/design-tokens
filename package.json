@@ -25,9 +25,83 @@
     "lint-staged": "lint-staged",
     "validate:circleci": "circleci config validate",
     "cm": "npx git-cz",
-    "contributors:add": "npx all-contributors add",
-    "contributors:generate": "npx all-contributors generate",
-    "contributors:check": "npx all-contributors check"
+    "////////// Section: Release": "==============================",
+    "semantic-release": "semantic-release",
+    "check:next-release": "npx semantic-release --no-ci --dry-run"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "lint-staged && yarn run docs:toc"
+    }
+  },
+  "config": {
+    "loglevel": "warn",
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./cz-config.js"
+    }
+  },
+  "publishConfig": {
+    "tag": "next"
+  },
+  "release": {
+    "========TODO": "Change to 'release' once https://github.com/GetTerminus/discworld/issues/66 lands.",
+    "branch": "master",
+    "plugins": [
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES",
+              "BREAKING"
+            ]
+          },
+          "writerOpts": {
+            "commitsSort": [
+              "subject",
+              "scope"
+            ]
+          }
+        }
+      ],
+      "@semantic-release/git"
+    ],
+    "verifyConditions": [
+      "condition-circle",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ],
+    "prepare": [
+      {
+        "path": "@semantic-release/changelog",
+        "changelogFile": "CHANGELOG.md"
+      },
+      {
+        "path": "@semantic-release/git",
+        "message": "📚 Add ${nextRelease.version} release notes [skip ci]"
+      }
+    ],
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": true,
+        "pkgRoot": "dist/terminus-ui"
+      },
+      {
+        "path": "@semantic-release/github",
+        "assets": [
+          "CHANGELOG.md"
+        ],
+        "npmPublish": false
+      }
+    ]
   },
   "engines": {
     "node": ">= 12.0.0",
@@ -35,13 +109,19 @@
     "yarn": ">= 1.0.0"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "3.0.4",
+    "@semantic-release/exec": "3.3.6",
+    "@semantic-release/git": "7.0.16",
+    "@semantic-release/github": "5.4.3",
+    "@semantic-release/npm": "5.1.15",
+    "@semantic-release/release-notes-generator": "7.3.0",
     "@terminus/eslint-config-frontend": "^1.1.1",
     "@typescript-eslint/parser": "^2.19.0",
-    "all-contributors-cli": "^6.13.0",
     "chokidar-cli": "^2.1.0",
     "circleci": "^0.3.3",
     "commitizen": "^4.0.3",
     "cz-customizable": "^6.2.0",
+    "doctoc": "^1.4.0",
     "eslint": "^6.8.0",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",

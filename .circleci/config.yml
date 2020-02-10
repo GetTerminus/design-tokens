@@ -1,9 +1,5 @@
 version: 2.1
 
-orbs:
-  # https://circleci.com/orbs/registry/orb/circleci/aws-s3
-  aws-s3: circleci/aws-s3@1.0.11
-
 #
 # Reusable definitions
 #
@@ -15,11 +11,13 @@ references:
       - image: circleci/node:12.14.1
 
   # Filter to run a job on builds for the release branch only.
-  filter_only_release_branch: &filter_only_release_branch
+  filter_only_base_branch: &filter_only_base_branch
     filters:
       branches:
+        # TODO: Change base branch back to release once https://github.com/GetTerminus/discworld/issues/66 lands.
         only:
-          - /^release$/
+           - /^master$/
+#          - /^release$/
 
   # Filter to run a job on tagged releases.
   # https://circleci.com/docs/2.0/workflows/#using-regular-expressions-to-filter-tags-and-branches
@@ -51,7 +49,9 @@ jobs:
           keys:
             - ts-design-tokens-yarn-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
             - ts-design-tokens-yarn-deps-{{ .Branch }}
-            - ts-design-tokens-yarn-deps-release
+            # TODO: Change base branch back to release once https://github.com/GetTerminus/discworld/issues/66 lands.
+#            - ts-design-tokens-yarn-deps-release
+            - ts-design-tokens-yarn-deps-master
             - ts-design-tokens-yarn-deps-
       - run:
           name: Install Dependencies
@@ -106,7 +106,7 @@ jobs:
 #
 workflows:
   version: 2.1
-  build_and_test:
+  build_and_release:
     jobs:
       - setup
       - build:
@@ -115,13 +115,8 @@ workflows:
       - lint:
           requires:
             - setup
-      - build_demos:
-          requires:
-            - build
       - publish_library:
-          <<: *filter_only_release_branch
+          <<: *filter_only_base_branch
           requires:
             - build
-            - build_demos
             - lint
-            - test

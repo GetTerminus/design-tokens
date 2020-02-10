@@ -1,7 +1,7 @@
 {
   "source": [
     "properties/**/*.js",
-    "ui-library/**/*.js"
+    "ui-library-tokens/**/*.js"
   ],
   "platforms": {
     "css": {
