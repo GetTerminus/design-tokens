@@ -1,0 +1,12 @@
+# 1.0.0 (2020-02-11)
+
+
+### Bug Fixes
+
+* **CI:** correct formatting issue in yarn copy command ([976f71f](https://github.com/GetTerminus/design-tokens/commit/976f71f11aec26c6ea9cd92767b573fc1ba73b12))
+* **CI:** file copy now happens as postbuild ([411dad0](https://github.com/GetTerminus/design-tokens/commit/411dad0e3c0b31d05ea1d0d80fbf27cf263b1c15))
+
+
+### Features
+
+* Initial setup and ci ([5073b1b](https://github.com/GetTerminus/design-tokens/commit/5073b1b15d947aa81a461230cf896177f2932ecd))
