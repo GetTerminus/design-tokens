@@ -17,6 +17,7 @@
     "////////// Section: Build": "==============================",
     "prebuild": "yarn run clean",
     "build": "node index.js",
+    "postbuild": "yarn run copy-files",
     "prewatch": "yarn run clean",
     "watch": "yarn run build && chokidar  \"{properties,ui-library}/**/*.js\" -c \"yarn run build\"",
     "clean": "rm -rf build",
