@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/GetTerminus/design-tokens/compare/v1.0.0...v1.0.1) (2020-02-11)
+
+
+### Bug Fixes
+
+* **CI:** set package private to false ([a1d1723](https://github.com/GetTerminus/design-tokens/commit/a1d1723c807ba1d5bfce88929f7fa88f0de57740))
+
 # 1.0.0 (2020-02-11)
 
 
