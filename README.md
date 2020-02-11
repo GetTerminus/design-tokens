@@ -1,4 +1,4 @@
-# Terminus style dictionary
+# Terminus Style Dictionary
 
 [![CircleCI][circle-badge]][circle-link]
 [![codecov][codecov-badge]][codecov-project]
@@ -18,9 +18,11 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [Terminus style dictionary](#terminus-style-dictionary)
+- [Commands](#commands)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Commands
 
 ```bash
 # Install dependencies:
