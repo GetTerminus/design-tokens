@@ -102,7 +102,7 @@
       {
         "path": "@semantic-release/npm",
         "npmPublish": true,
-        "pkgRoot": "dist/terminus-ui"
+        "pkgRoot": "build/"
       },
       {
         "path": "@semantic-release/github",
