@@ -1,7 +1,6 @@
 # Terminus Style Dictionary
 
 [![CircleCI][circle-badge]][circle-link]
-[![codecov][codecov-badge]][codecov-project]
 [![DavidDM][david-badge]][david-link]
 [![DavidDM Dev][david-dev-badge]][david-link]
 <br>
