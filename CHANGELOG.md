@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/GetTerminus/design-tokens/compare/v1.0.1...v1.0.2) (2020-02-11)
+
+
+### Bug Fixes
+
+* **CI:** remove old badges from readme ([48b3ac3](https://github.com/GetTerminus/design-tokens/commit/48b3ac39fdf73bcee42ee5081073cd7e6a277cb1))
+
 ## [1.0.1](https://github.com/GetTerminus/design-tokens/compare/v1.0.0...v1.0.1) (2020-02-11)
 
 
