@@ -31,7 +31,7 @@
     "validate:circleci": "circleci config validate",
     "cm": "npx git-cz",
     "////////// Section: Release": "==============================",
-    "copy-files": "cp {package.json, LICENSE, README.md} build/",
+    "copy-files": "cp ./{package.json,LICENSE,README.md} build/",
     "semantic-release": "semantic-release",
     "check:next-release": "npx semantic-release --no-ci --dry-run"
   },
