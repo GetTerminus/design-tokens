@@ -9,14 +9,6 @@
       "packagePatterns": ["jest"],
       "groupName": "Jest Packages"
     },
-    {
-      "packagePatterns": ["^@semantic-release"],
-      "groupName": "SemanticRelease Packages"
-    },
-    {
-      "packagePatterns": ["stylelint"],
-      "groupName": "StyleLint Packages"
-    }
   ],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,

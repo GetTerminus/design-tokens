@@ -1,6 +1,7 @@
 # Style Dictionary Generated Files (ios)
 ios/assets
 ios/Classes/Generated
+dist
 
 # OS X
 .DS_Store
