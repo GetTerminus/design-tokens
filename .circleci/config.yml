@@ -90,7 +90,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - ./build/*
+            - ./dist/tokens/*
   publish_library:
     <<: *defaults
     steps:
@@ -99,6 +99,27 @@ jobs:
       - run:
           name: Publish Tokens
           command: npx semantic-release
+  build_demos:
+    <<: *defaults
+    steps:
+      - *attach_workspace
+      - run:
+          name: Build Demos with AoT
+          command: yarn run demo:build:ci
+      - store_artifacts:
+          path: /home/circleci/ci-build/dist/demo/
+          destination: ~/demo/
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./dist/demo/*
+  deploy_demos:
+    <<: *defaults
+    steps:
+      - *attach_workspace
+      - run:
+          name: Publish Demos
+          command: yarn run deploy-demo
 
 
 #
@@ -115,8 +136,17 @@ workflows:
       - lint:
           requires:
             - setup
+#      - build_demos:
+#          requires:
+#            - build
       - publish_library:
           <<: *filter_only_base_branch
           requires:
             - build
             - lint
+#            - build_demos
+#      - deploy_demos:
+#          <<: *filter_only_base_branch
+#          requires:
+#            - build_demos
+#            - publish_library

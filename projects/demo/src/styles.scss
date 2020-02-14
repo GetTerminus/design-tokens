@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@terminus/design-tokens/css/design-tokens.css';
+@import '~modern-normalize/modern-normalize.css';
+
+
+// Reset:
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+dl, dt, dd {
+  margin: 0;
+}
+
+// Base styles:
+
+html {
+  background-color: var(--ts-color-base-white);
+  color: var(--ts-color-base-black);
+  font-family: var(--ts-typography-family-base-roboto);
+  font-size: var(--ts-typography-size-300);
+}
+
+body {
+  margin: 0;
+}
+
+
+// stylelint-disable selector-type-no-unknown
+router-outlet + * {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+// stylelint-enable selector-type-no-unknown
+
+
+
+// Library overwrites:
