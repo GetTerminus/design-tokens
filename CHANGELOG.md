@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/GetTerminus/design-tokens/compare/v1.0.3...v1.0.4) (2020-02-19)
+
+
+### Bug Fixes
+
+* **Demo:** enable demo deploy ([56dbb6b](https://github.com/GetTerminus/design-tokens/commit/56dbb6bd23b51db811aea226ff3a341164744ee4))
+
 ## [1.0.3](https://github.com/GetTerminus/design-tokens/compare/v1.0.2...v1.0.3) (2020-02-19)
 
 
