@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/GetTerminus/design-tokens/compare/v1.0.2...v1.0.3) (2020-02-19)
+
+
+### Bug Fixes
+
+* **CI:** fix deploy dir ([57274e0](https://github.com/GetTerminus/design-tokens/commit/57274e0ce1cd7920292859dbdb5476828f8bc93f))
+
 ## [1.0.2](https://github.com/GetTerminus/design-tokens/compare/v1.0.1...v1.0.2) (2020-02-11)
 
 
