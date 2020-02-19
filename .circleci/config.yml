@@ -136,17 +136,17 @@ workflows:
       - lint:
           requires:
             - setup
-#      - build_demos:
-#          requires:
-#            - build
+      - build_demos:
+          requires:
+            - build
       - publish_library:
           <<: *filter_only_base_branch
           requires:
             - build
             - lint
-#            - build_demos
-#      - deploy_demos:
-#          <<: *filter_only_base_branch
-#          requires:
-#            - build_demos
-#            - publish_library
+            - build_demos
+      - deploy_demos:
+          <<: *filter_only_base_branch
+          requires:
+            - build_demos
+            - publish_library
