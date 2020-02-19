@@ -117,7 +117,7 @@
       {
         "path": "@semantic-release/npm",
         "npmPublish": true,
-        "pkgRoot": "build/"
+        "pkgRoot": "dist/tokens"
       },
       {
         "path": "@semantic-release/github",
