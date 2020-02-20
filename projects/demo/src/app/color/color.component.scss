@@ -4,7 +4,8 @@
 }
 
 .controls {
-  background-color: var(--ts-color-base-palette7-300);
+  background-color: var(--ts-color-base-palette7-100);
+  border: 1px solid var(--ts-color-base-palette7-300);
   padding: var(--ts-space-inset-300);
 }
 
@@ -96,7 +97,6 @@
   dt {
     color: var(--grey-blue-text-color);
     font-size: var(--ts-typography-size-200);
-    margin-bottom: var(--ts-space-stack-200);
 
     &::after {
       content: ':';

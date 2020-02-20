@@ -217,6 +217,13 @@
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-8.2.14.tgz#e18b27a6841577ce489ad31540150da5a444ca37"
   integrity sha512-7EhN9JJbAJcH2xCa+rIOmekjiEuB0qwPdHuD5qn/wwMfRzMZo+Db4hHbR9KHrLH6H82PTwYKye/LLpDaZqoHOA==
 
+"@angular/material@8.2.3":
+  version "8.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-8.2.3.tgz#16543e4e06a3fde2651a25cfe126e88e714ae105"
+  integrity sha512-SOczkIaqes+r+9XF/UUiokidfFKBpHkOPIaFK857sFD0FBNPvPEpOr5oHKCG3feERRwAFqHS7Wo2ohVEWypb5A==
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/platform-browser-dynamic@8.2.14":
   version "8.2.14"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-8.2.14.tgz#4439a79fe10ec45170e6940a28835e9ff0918950"
@@ -1766,6 +1773,13 @@
     lodash "^4.17.15"
     semver "^6.3.0"
     tsutils "^3.17.1"
+
+"@w11k/ngx-componentdestroyed@^4.1.5":
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/@w11k/ngx-componentdestroyed/-/ngx-componentdestroyed-4.1.5.tgz#91c658c8f1a8567b6ebdda1575b2c6956748105a"
+  integrity sha512-LLkcq8a9r0G9oHIYT8hvkisK8P1+pNLhx6E3EWBf46CB2Msj8f70Kj+5l9LFmeoRfrGNfkHpigv2NvHg+Kmdow==
+  dependencies:
+    rxjs ">=6.0.0"
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
@@ -10566,7 +10580,7 @@ rxjs@6.4.0, rxjs@~6.4.0:
   dependencies:
     tslib "^1.9.0"
 
-rxjs@^6.3.3, rxjs@^6.4.0, rxjs@^6.5.3:
+rxjs@>=6.0.0, rxjs@^6.3.3, rxjs@^6.4.0, rxjs@^6.5.3:
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.4.tgz#e0777fe0d184cec7872df147f303572d414e211c"
   integrity sha512-naMQXcgEo3csAEGvw/NydRA0fuS2nDZJiw1YUWFKU7aPPAPGZEsD4Iimit96qwCieH6y614MCLYwdkrWx7z/7Q==

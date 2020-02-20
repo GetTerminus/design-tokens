@@ -1,6 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-@import '~@terminus/design-tokens/css/design-tokens.css';
 @import '~modern-normalize/modern-normalize.css';
+@import 'app/scss/theme';
+@import '~@terminus/design-tokens/css/design-tokens.css';
 
 
 // Reset:
@@ -37,3 +37,6 @@ router-outlet + * {
 
 
 // Library overwrites:
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
