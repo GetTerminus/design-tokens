@@ -1,24 +1,42 @@
 <div class="palettes">
-  <header fxLayout="row" fxLayoutAlign="center center">
-    <h1 fxFlex>Base Palettes</h1>
-  </header>
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <header fxLayout="row" fxLayoutAlign="center center">
+      <h1 fxFlex>Base Palettes</h1>
+    </header>
 
-  <div class="controls">
-    <label>
-      Color format:
-      <select name="format" [(ngModel)]="selectedFormat" (ngModelChange)="saveFormat()">
-        <option [value]="format" *ngFor="let format of formats">
-          {{ format }}
-        </option>
-      </select>
-    </label>
+    <span fxFlex></span>
+
+    <form
+      class="controls"
+      [formGroup]="controlsForm"
+      fxLayout="row"
+      fxLayoutGap="16px"
+    >
+      <mat-form-field>
+        <mat-label>Color format:</mat-label>
+        <mat-select formControlName="selectedFormat">
+          <mat-option *ngFor="let format of allPossibleFormats" [value]="format">
+            {{ format }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Visible references:</mat-label>
+        <mat-select formControlName="selectedReferences" multiple>
+          <mat-option *ngFor="let reference of allPossibleReferences" [value]="reference.value">
+            {{ reference.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
   </div>
 
   <div class="palette" *ngFor="let palette of colors" id="{{ palette.name }}">
     <h2 class="palette__name">
       <a
         class="palette__link"
-        [routerLink]="'/color'"
+        routerLink="."
         [fragment]="palette.name"
       >
         <span aria-hidden="true" class="palette__link-icon">
@@ -53,25 +71,40 @@
             <tsdt-grab [value]="formatColor(color.value)"></tsdt-grab>
           </dd>
 
-          <dt>CSS custom property</dt>
-          <dd>
-            <tsdt-grab [value]="'--' + color.sassName"></tsdt-grab>
-          </dd>
+          <ng-container *ngIf="controlsForm.get('selectedReferences').value.indexOf('css') >= 0">
+            <dt>CSS custom property</dt>
+            <dd>
+              <tsdt-grab [value]="'--' + color.sassName"></tsdt-grab>
+            </dd>
+          </ng-container>
 
-          <dt>Sass variable</dt>
-          <dd>
-            <tsdt-grab [value]="'$' + color.sassName"></tsdt-grab>
-          </dd>
+          <ng-container *ngIf="controlsForm.get('selectedReferences').value.indexOf('sass-variable') >= 0">
+            <dt>Sass variable</dt>
+            <dd>
+              <tsdt-grab [value]="'$' + color.sassName"></tsdt-grab>
+            </dd>
+          </ng-container>
 
-          <dt>Sass map</dt>
-          <dd>
-            <tsdt-grab [value]="'map-get($tokens, ' + color.sassName + ')'"></tsdt-grab>
-          </dd>
+          <ng-container *ngIf="controlsForm.get('selectedReferences').value.indexOf('sass-map') >= 0">
+            <dt>Sass map</dt>
+            <dd>
+              <tsdt-grab [value]="'map-get($tokens, ' + color.sassName + ')'"></tsdt-grab>
+            </dd>
+          </ng-container>
 
-          <dt>JavaScript constant</dt>
-          <dd>
-            <tsdt-grab [value]="color.jsName"></tsdt-grab>
-          </dd>
+          <ng-container *ngIf="controlsForm.get('selectedReferences').value.indexOf('js') >= 0">
+            <dt>JavaScript constant</dt>
+            <dd>
+              <tsdt-grab [value]="color.jsName"></tsdt-grab>
+            </dd>
+          </ng-container>
+
+          <ng-container *ngIf="controlsForm.get('selectedReferences').value.indexOf('json') >= 0">
+            <dt>JSON path</dt>
+            <dd>
+              <tsdt-grab [value]="color.jsonPath"></tsdt-grab>
+            </dd>
+          </ng-container>
         </dl>
       </div>
     </div>
