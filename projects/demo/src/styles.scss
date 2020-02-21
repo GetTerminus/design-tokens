@@ -25,6 +25,19 @@ body {
   margin: 0;
 }
 
+:root {
+  --selection-background: var(--ts-color-base-palette4-500);
+  --selection-color: var(--ts-color-base-white);
+}
+
+::selection {
+  background: var(--selection-background);
+  color: var(--selection-color);
+}
+::-moz-selection {
+  background: var(--selection-background);
+  color: var(--selection-color);
+}
 
 // stylelint-disable selector-type-no-unknown
 router-outlet + * {
