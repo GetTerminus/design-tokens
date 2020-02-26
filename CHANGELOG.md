@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/GetTerminus/design-tokens/compare/v1.0.5...v1.0.6) (2020-02-26)
+
+
+### Bug Fixes
+
+* **Tokens:** remove sanserif stack ([9480c8b](https://github.com/GetTerminus/design-tokens/commit/9480c8be29110b6469aceea1afb4da38c03307d7))
+
 ## [1.0.5](https://github.com/GetTerminus/design-tokens/compare/v1.0.4...v1.0.5) (2020-02-26)
 
 
