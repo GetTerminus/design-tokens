@@ -11,7 +11,6 @@ module.exports = {
       800: { value: 45 },
       900: { value: 56 },
       1000: { value: 112 },
-      base: { value: '{typography.size.300.value}' },
     },
   },
 };
