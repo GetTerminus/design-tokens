@@ -1,6 +1,7 @@
 @import '~modern-normalize/modern-normalize.css';
 @import 'app/scss/theme';
 @import '~@terminus/design-tokens/css/design-tokens.css';
+@import 'app/scss/utility-classes';
 
 
 // Reset:
@@ -39,13 +40,25 @@ body {
   color: var(--selection-color);
 }
 
-// stylelint-disable selector-type-no-unknown
-router-outlet + * {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+.visually-hidden {
+  $smallest-adjustment: 1px;
+
+  // Avoid some cases where the browser will still render the native controls (see #9049).
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: $smallest-adjustment;
+  margin: -$smallest-adjustment;
+
+  // Avoid browsers rendering the focus ring in some cases.
+  outline: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: $smallest-adjustment;
 }
-// stylelint-enable selector-type-no-unknown
 
 
 
