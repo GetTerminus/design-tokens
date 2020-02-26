@@ -1,7 +1,3 @@
-// Primary container for all palettes
-.palettes {
-  padding: var(--ts-space-inset-500);
-}
 
 .controls {
   background-color: var(--ts-color-base-palette7-100);
@@ -71,11 +67,9 @@
 
   // Container for a color within a palette
   .color {
-    background-color: var(--ts-color-base-white);
-    border-radius: var(--ts-border-radius-base);
-    box-shadow: 0 3px 5px -1px rgba(0,0,0,0.20), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
 
     &__display {
+      border-bottom: 1px solid var(--ts-color-base-palette7-300);
       border-radius: var(--ts-border-radius-base) var(--ts-border-radius-base) 0 0;
       height: var(--color-block-height);
 
@@ -86,37 +80,6 @@
         padding: var(--ts-space-inset-300);
         margin-bottom: var(--ts-space-stack-400);
       }
-    }
-
-    &__definition {
-      border-top: 1px solid var(--ts-color-base-palette7-300);
-      padding: var(--ts-space-inset-300);
-    }
-  }
-
-  dt {
-    color: var(--grey-blue-text-color);
-    font-size: var(--ts-typography-size-200);
-
-    &::after {
-      content: ':';
-      display: inline-block;
-    }
-  }
-
-  dd {
-    cursor: copy;
-    font-family: var(--ts-typography-stack-base-monospaced);
-    font-size: var(--ts-typography-size-300);
-    transition: color var(--ts-animation-time-duration-200) var(--ts-animation-easing-ease);
-
-    &:not(:last-of-type) {
-      margin-bottom: var(--ts-space-stack-500);
-    }
-
-    &:focus,
-    &:hover {
-      color: var(--ts-color-base-palette2-500);
     }
   }
 }

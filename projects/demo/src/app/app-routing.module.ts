@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import {
   Routes,
-  RouterModule, ExtraOptions,
+  RouterModule,
+  ExtraOptions,
 } from '@angular/router';
 
-import { ColorComponent } from './color/color.component';
+import { ColorComponent } from './features/color/color.component';
+import { LandingComponent } from './features/landing/landing.component';
+import { TypographyComponent } from './features/typography/typography.component';
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
@@ -13,12 +16,20 @@ const routerOptions: ExtraOptions = {
 
 const routes: Routes = [
   {
+    path: '',
+    component: LandingComponent,
+  },
+  {
     path: 'color',
     component: ColorComponent,
   },
   {
+    path: 'typography',
+    component: TypographyComponent,
+  },
+  {
     path: '**',
-    redirectTo: '/color',
+    redirectTo: '/',
   },
 ];
 
