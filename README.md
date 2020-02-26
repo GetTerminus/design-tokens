@@ -23,9 +23,10 @@
   - [JavaScript & TypeScript](#javascript--typescript)
 - [Development](#development)
   - [Tokens](#tokens)
-  - [Demo](#demo)
+  - [Commits](#commits)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ## Installation
 
@@ -36,16 +37,19 @@ $ yarn add @terminus/design-tokens
 
 ## Usage
 
-TODO: Call out all exported types and file paths
+Currently there are two sets of tokens being generated:
 
-1. base
-2. library
+1. Base Tokens: The lowest level of token, abstracted away from specific applications.
+2. Library Tokens: Tokens generated for the UI Library.
 
 ### CSS & SCSS
 
 ```scss
-// CSS tokens:
+// Base CSS tokens:
 @import '~@terminus/design-tokens/css/design-tokens.css';
+// or
+// Library CSS Tokens
+@import '~@terminus/design-tokens/css/library-design-tokens.css';
 
 .foo {
   color: var(--ts-color-base-palette1-500);
@@ -113,18 +117,20 @@ $ yarn run cm
 NOTE: When developing locally using `yarn link @terminus/design-tokens` you must tell your IDE to not ignore the `dist`
 directory.
 
-### Demo
+### Commits
 
-The demo app is managed as part of our PR process (ie not currently automated). We are using GitHub pages for hosting so
-the compiled demo is copied to `docs/` as part of the development process. This is all managed by the `prepare-release`
-command.
+The tokens are automatically published via our CI process with version control bumps controlled by the commits included.
 
-```
-// 1. Build the tokens & demo, copy needed files.
-yarn run prepare-release
+| Action                                                 |  Commit Type   | Version Change |
+|:-------------------------------------------------------|----------------|:---------------|
+| A token is moved, removed, or renamed                  | BreakingChange | `1.x.x`        |
+| A tokens value is changed or other attributes modified | Feature        | `x.1.x`        |
+| A new token is added                                   | Feature        | `x.1.x`        |
+| The tokens demo site is modified                       | Chore          | `none`         |
 
-// 2. Create PR!
-```
+Running `yarn run cm` will start a walk-through in the CLI that will help you craft the correct commit.
+
+**NOTE:** Demo site changes should **not** trigger a version change for the tokens library.
 
 
 [npm-version-image]:      http://img.shields.io/npm/v/@terminus/design-tokens.svg
