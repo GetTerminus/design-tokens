@@ -20,6 +20,7 @@ html {
   color: var(--ts-color-base-black);
   font-family: var(--ts-typography-family-base-roboto);
   font-size: var(--ts-typography-size-300);
+  scroll-behavior: smooth;
 }
 
 body {
