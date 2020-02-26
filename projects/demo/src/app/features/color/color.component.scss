@@ -1,14 +1,14 @@
-
 // primary view container
 .color {
   // dummy wrapper for nav so page retains layout
   .color__nav {
-    width: 100px;
+    padding-top: var(--ts-space-inset-500);
+    width: 80px;
   }
 
   nav {
     --nav-item-width: 30px;
-    position: fixed;
+    position: sticky;
     right: 16px;
     top: 160px;
     // Allow two palettes to appear side by side
@@ -20,7 +20,6 @@
       border-style: solid;
       display: block;
       height: var(--nav-item-width);
-      //margin: 1px;
       transition-property: border-color, box-shadow, transform;
       transition-timing-function: ease-out;
       transition-duration: 200ms;
@@ -44,6 +43,8 @@
   --title-shadow: 6px 1px 15px -7px black;
   margin-bottom: var(--ts-space-stack-700);
   padding: var(--ts-space-inset-500);
+  // Set up for local link location
+  position: relative;
 
   // <h2> The palette name
   &__name {
@@ -98,6 +99,8 @@
 
   // Container for a color within a palette
   .color {
+    // Set up for local link location
+    position: relative;
 
     &__display {
       border-bottom: 1px solid var(--ts-color-base-palette7-300);

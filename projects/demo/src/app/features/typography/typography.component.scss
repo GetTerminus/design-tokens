@@ -5,6 +5,8 @@ header {
 // wrapper for stack
 .stack {
   margin-bottom: var(--ts-space-stack-800);
+  // Set up for local anchor link
+  position: relative;
 
   // wrapper for stacks info and display
   &__info {

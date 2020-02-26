@@ -4,7 +4,11 @@
       <h2 fxFlex>Base Palettes</h2>
     </header>
 
-    <div class="palette" *ngFor="let palette of colors" id="{{ palette.name }}">
+    <div
+      class="palette"
+      *ngFor="let palette of colors"
+    >
+      <span id="{{ palette.name }}" class="visually-hidden fake-link"></span>
       <h2 class="palette__name">
         <a
           class="palette__link"
@@ -23,7 +27,8 @@
           gdGap="16px"
           gdColumns="repeat(auto-fill, minmax(300px, 1fr))"
       >
-        <div class="color card" *ngFor="let color of palette.colors" id="{{ color.name }}">
+        <div class="color card" *ngFor="let color of palette.colors">
+          <span id="{{ color.name }}" class="visually-hidden fake-link--large"></span>
           <div
             class="color__display"
             [style.backgroundColor]="color.value"
