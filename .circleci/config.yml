@@ -149,4 +149,3 @@ workflows:
           <<: *filter_only_base_branch
           requires:
             - build_demos
-            - publish_library
