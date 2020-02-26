@@ -124,8 +124,8 @@ The tokens are automatically published via our CI process with version control b
 | Action                                                 |  Commit Type   | Version Change |
 |:-------------------------------------------------------|----------------|:---------------|
 | A token is moved, removed, or renamed                  | BreakingChange | `1.x.x`        |
-| A tokens value is changed or other attributes modified | Feature        | `x.1.x`        |
 | A new token is added                                   | Feature        | `x.1.x`        |
+| A tokens value is changed or other attributes modified | Fix            | `x.x.1`        |
 | The tokens demo site is modified                       | Chore          | `none`         |
 
 Running `yarn run cm` will start a walk-through in the CLI that will help you craft the correct commit.
