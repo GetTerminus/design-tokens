@@ -1,3 +1,15 @@
+## [1.0.5](https://github.com/GetTerminus/design-tokens/compare/v1.0.4...v1.0.5) (2020-02-26)
+
+
+### Bug Fixes
+
+* **Tokens:** refactor base terminology ([38ddf65](https://github.com/GetTerminus/design-tokens/commit/38ddf658fb326d484fec2570b6fc327b00abc1e4))
+
+
+### Reverts
+
+* **CI:** remove docs directory ([920b1c1](https://github.com/GetTerminus/design-tokens/commit/920b1c1b7de4d222a0d4bd238550ec9a57c0f748))
+
 ## [1.0.4](https://github.com/GetTerminus/design-tokens/compare/v1.0.3...v1.0.4) (2020-02-19)
 
 
