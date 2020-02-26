@@ -8,7 +8,6 @@ module.exports = {
       700: { value: 56 },
       800: { value: 64 },
       1000: { value: 112 },
-      base: { value: '{typography.lineHeight.300.value}' },
     },
   },
 };
