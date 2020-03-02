@@ -9,7 +9,7 @@ module.exports = {
         filter: { attributes: { category: 'color' } },
       }],
       prefix: 'ts',
-      transformGroup: 'ts/sketch',
+      transformGroup: 'ts/sketch/color',
     },
   },
 };
