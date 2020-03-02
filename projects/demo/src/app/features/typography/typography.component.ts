@@ -32,7 +32,7 @@ export class TypographyComponent {
    * @param data - The raw data
    * @return The array of formatted stacks
    */
-  private static formatTypographyStacks(data: Record<string, any>) {
+  private static formatTypographyStacks(data: Record<string, any>): Record<string, any>[] {
     const stackNames = Object.keys(data);
     const newArray = [];
 

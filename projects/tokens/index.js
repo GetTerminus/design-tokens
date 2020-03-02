@@ -1,22 +1,10 @@
 const StyleDictionary = require('style-dictionary');
-// NOTE: `transforms` must be included _before_ `transformGroups`.
-require('./config/transforms');
-require('./config/transformGroups');
+const formats = require('./config/formats').formats;
+const transforms = require('./config/transforms').transforms;
+const transformGroups = require('./config/transformGroups').transformGroups;
 
 
-// TODO: Create custom transform to create sketch shared text styles
-// StyleDictionary.registerTransform({
-//   name: 'sketch/typography',
-//   type: 'value',
-//   matcher: function(prop) {
-//     return prop.attributes.category === 'compound';
-//   },
-//   transformer: function(prop) {
-//     return prop.original.value;
-//   }
-// });
-
-
+// Define the collection of configurations that StyleDictionary should build
 const configs = [
   {
     name: 'base',
@@ -30,12 +18,25 @@ const configs = [
     name: 'sketch-color',
     config: require('./config/config-sketch-color'),
   },
+  {
+    name: 'sketch-typography',
+    config: require('./config/config-sketch-typography'),
+  },
   // TODO
   // {
-  //   name: 'sketch-typography',
-  //   config: require('./config/config-sketch-typography'),
+  //   name: 'compound',
+  //   config: require('./config/compound'),
   // },
 ];
+
+// Register custom transforms
+transforms.forEach(transform => StyleDictionary.registerTransform(transform));
+
+// Register custom transform groups
+transformGroups.forEach(group => StyleDictionary.registerTransformGroup(group));
+
+// Register custom formats
+formats.forEach(format => StyleDictionary.registerFormat(format));
 
 // Build all configurations
 configs.map(function(config) {

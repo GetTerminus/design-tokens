@@ -2,14 +2,14 @@ module.exports = {
   include: ['projects/tokens/base/**/*.js'],
   source: ['projects/tokens/ui-library-tokens/typography/compound.js'],
   platforms: {
-    sketchTypography: {
-      buildPath: 'dist/tokens/sketch/',
+    css: {
+      buildPath: 'dist/tokens/css/',
       files: [{
-        destination: 'typographyDesignTokens.json',
-        format: 'ts-format-sketch-typography',
+        destination: 'library-design-tokens.css',
+        format: 'css/variables',
       }],
       prefix: 'ts',
-      transformGroup: 'ts/sketch/typography',
+      transformGroup: 'ts/css',
     },
   },
 };
