@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/GetTerminus/design-tokens/compare/v1.0.6...v1.0.7) (2020-03-02)
+
+
+### Bug Fixes
+
+* **Tokens:** inital pass at typography export for sketch ([d890cd3](https://github.com/GetTerminus/design-tokens/commit/d890cd3daf1fd43f3753ea34998b554afc398199))
+
 ## [1.0.6](https://github.com/GetTerminus/design-tokens/compare/v1.0.5...v1.0.6) (2020-02-26)
 
 
