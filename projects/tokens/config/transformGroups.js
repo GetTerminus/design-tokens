@@ -47,6 +47,20 @@ const transformGroups = [
   },
 
   /**
+   * The collection of transforms used for SCSS
+   */
+  {
+    name: 'ts/scss',
+    transforms: [
+      'attribute/cti',
+      'color/css',
+      'ts/name/cti/kebabCamel',
+      'ts/time/milliseconds',
+      'ts/type/size/px',
+    ],
+  },
+
+  /**
    * The collection of transforms used for JavaScript generation
    */
   {

@@ -27,7 +27,7 @@ module.exports = {
         format: 'scss/variables',
       }],
       prefix: 'ts',
-      transformGroup: 'scss',
+      transformGroup: 'ts/scss',
     },
     js: {
       buildPath: 'dist/tokens/js/',
