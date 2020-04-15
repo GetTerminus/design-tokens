@@ -85,6 +85,9 @@ jobs:
           name: Build Project
           command: yarn run build
       - store_artifacts:
+          path: /home/circleci/ci-build/dist/tokens/
+          destination: ~/tokens/
+      - store_artifacts:
           path: /home/circleci/.npm/_logs/
           destination: ~/npm_logs/
       - persist_to_workspace:
