@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/GetTerminus/design-tokens/compare/v1.0.7...v1.0.8) (2020-04-15)
+
+
+### Bug Fixes
+
+* **Tokens:** add missing 'ms' to time based scss tokens ([2ccfad9](https://github.com/GetTerminus/design-tokens/commit/2ccfad984a021137e57a4be641cf609e6226a2a6))
+
 ## [1.0.7](https://github.com/GetTerminus/design-tokens/compare/v1.0.6...v1.0.7) (2020-03-02)
 
 
