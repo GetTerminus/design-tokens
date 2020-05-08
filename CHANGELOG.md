@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/GetTerminus/design-tokens/compare/v1.0.8...v1.0.9) (2020-05-08)
+
+
+### Bug Fixes
+
+* **Tokens:** correct incorrect name for radius ([76b81f9](https://github.com/GetTerminus/design-tokens/commit/76b81f9cea15462485c1387a525b38ebaabca2d0))
+
 ## [1.0.8](https://github.com/GetTerminus/design-tokens/compare/v1.0.7...v1.0.8) (2020-04-15)
 
 
