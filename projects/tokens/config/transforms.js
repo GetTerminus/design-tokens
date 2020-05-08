@@ -25,9 +25,7 @@ const transforms = [
       const nonZeroValue = prop.original.value !== 0;
       return matches && nonZeroValue;
     },
-    transformer(prop) {
-      return `${prop.original.value}ms`;
-    },
+    transformer: prop => `${prop.original.value}ms`,
   },
 
   /**
@@ -44,9 +42,7 @@ const transforms = [
     name: 'ts/type/size/px',
     type: 'value',
     matcher: utilities.needsPx,
-    transformer(prop) {
-      return `${prop.original.value}px`;
-    },
+    transformer: prop => `${prop.original.value}px`,
   },
 
   /**
@@ -66,9 +62,7 @@ const transforms = [
   {
     name: 'ts/name/cti/kebabCamel',
     type: 'name',
-    transformer(prop, options) {
-      return `${options.prefix}-${prop.path.join('-')}`;
-    },
+    transformer: (prop, options) => `${options.prefix}-${prop.path.join('-')}`,
   },
 
   /**

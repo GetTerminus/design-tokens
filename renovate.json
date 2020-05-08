@@ -1,9 +1,10 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    "schedule:weekends"
   ],
   "assignees": ["benjamincharity"],
-  "masterIssue": "true",
+  "masterIssue": true,
   "packageRules": [
     {
       "packagePatterns": ["jest"],

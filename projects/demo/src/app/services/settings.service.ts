@@ -1,19 +1,22 @@
 import {
   Inject,
-  Injectable, OnDestroy,
-  OnInit,
+  Injectable,
 } from '@angular/core';
-import { untilComponentDestroyed } from '@w11k/ngx-componentdestroyed';
+import {
+  OnDestroyMixin,
+  untilComponentDestroyed,
+} from '@w11k/ngx-componentdestroyed';
 import {
   LOCAL_STORAGE,
   WebStorageService,
 } from 'ngx-webstorage-service';
 import { BehaviorSubject } from 'rxjs';
+
 import { TsdtColorFormat } from '../pipes/color-format.pipe';
 
 
 @Injectable({ providedIn: 'root' })
-export class SettingsService implements OnDestroy {
+export class SettingsService extends OnDestroyMixin {
   // REFERENCES
   public readonly referencesKey = 'tsSelectedReferences';
   public selectedReferences$: BehaviorSubject<string[]> = new BehaviorSubject(this.allPossibleReferences.map(v => v.value));
@@ -59,13 +62,9 @@ export class SettingsService implements OnDestroy {
   constructor(
     @Inject(LOCAL_STORAGE) private storage: WebStorageService,
   ) {
+    super();
     this.init();
   }
-
-  /**
-   * Needed for untilComponentDestroyed
-   */
-  public ngOnDestroy(): void {}
 
   /**
    * Update the user selected visible references
@@ -91,7 +90,7 @@ export class SettingsService implements OnDestroy {
    * Retrieve data from local storage
    *
    * @param key - The key to retrieve from storage
-   * @return The retrieved value
+   * @returns The retrieved value
    */
   public getFromLocalStorage(key: string): any {
     return this.storage.get(key);
@@ -135,5 +134,4 @@ export class SettingsService implements OnDestroy {
       this.saveInLocalStorage(this.colorFormatKey, v);
     });
   }
-
 }
