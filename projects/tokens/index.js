@@ -1,7 +1,8 @@
 const StyleDictionary = require('style-dictionary');
+
 const formats = require('./config/formats').formats;
-const transforms = require('./config/transforms').transforms;
 const transformGroups = require('./config/transformGroups').transformGroups;
+const transforms = require('./config/transforms').transforms;
 
 
 // Define the collection of configurations that StyleDictionary should build

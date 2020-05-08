@@ -4,7 +4,7 @@
  * NOTE: This is slightly different than the hex>rgb function in the Demo app.
  *
  * @param hex - The hex string
- * @return number[] array of RGBA color values
+ * @returns number[] array of RGBA color values
  */
 const hexToRgba = function(hex) {
   let r = 0;
@@ -35,7 +35,7 @@ const hexToRgba = function(hex) {
  * Determine if the prop should be a `px` value
  *
  * @param prop - Object of properties and attributes
- * @return boolean
+ * @returns boolean
  */
 const needsPx = function(prop) {
   const isPxRadius = prop.attributes.category === 'border' && prop.attributes.subitem === 'percent';

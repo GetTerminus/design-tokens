@@ -1,10 +1,15 @@
 import {
-  Component, OnDestroy, OnInit,
+  Component,
+  OnInit,
 } from '@angular/core';
 import {
-  FormControl, FormGroup,
+  FormControl,
+  FormGroup,
 } from '@angular/forms';
-import { untilComponentDestroyed } from '@w11k/ngx-componentdestroyed';
+import {
+  OnDestroyMixin,
+  untilComponentDestroyed,
+} from '@w11k/ngx-componentdestroyed';
 
 import { SettingsService } from '../../services/settings.service';
 
@@ -17,7 +22,7 @@ import { SettingsService } from '../../services/settings.service';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent implements OnInit, OnDestroy {
+export class ToolbarComponent extends OnDestroyMixin implements OnInit {
   public allPossibleReferences = this.settingsService.allPossibleReferences;
   public allPossibleColorFormats = this.settingsService.allPossibleColorFormats;
   private defaultVisibleReferences = this.allPossibleReferences.map(v => v.value);
@@ -29,7 +34,9 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   constructor(
     private settingsService: SettingsService,
-  ) {}
+  ) {
+    super();
+  }
 
   /**
    * Initial setup and subscriptions
@@ -50,11 +57,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
         }
       });
   }
-
-  /**
-   * Needed for untilComponentDestroyed
-   */
-  public ngOnDestroy() {}
 
   /**
    * Initialize visible references with any saved user preferences
