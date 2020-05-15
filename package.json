@@ -48,7 +48,7 @@
     "precopy-to-npm": "yarn run remove-existing-install",
     "copy-to-npm": "cp -R dist/tokens node_modules/@terminus/design-tokens",
     "remove-existing-install": "rm -rf node_modules/@terminus/design-tokens",
-    "copy-files": "npx copyfiles package.json LICENSE README.md dist/tokens/ && echo 'Package files copied.'",
+    "copy-files": "cp projects/tokens/release-package.json dist/tokens/package.json && npx copyfiles LICENSE README.md dist/tokens/ && echo 'Package files copied.'",
     "semantic-release": "semantic-release",
     "check:next-release": "npx semantic-release --no-ci --dry-run"
   },
@@ -129,6 +129,7 @@
       }
     ]
   },
+  "sideEffects": false,
   "engines": {
     "node": ">= 12.0.0",
     "npm": ">= 5.0.0",
