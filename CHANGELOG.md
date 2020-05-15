@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/GetTerminus/design-tokens/compare/v1.0.9...v1.0.10) (2020-05-15)
+
+
+### Bug Fixes
+
+* **Packages:** ship custom packagejson with no dependencies ([d99f9e0](https://github.com/GetTerminus/design-tokens/commit/d99f9e02b77e5fcc00c8b735fcf7e22b1fb3a6a2))
+
 ## [1.0.9](https://github.com/GetTerminus/design-tokens/compare/v1.0.8...v1.0.9) (2020-05-08)
 
 
