@@ -1,5 +1,20 @@
 # Terminus Style Dictionary
 
+---
+
+<h2>:rotating_light: ATTENTION: THIS REPO HAS MOVED :rotating_light:</h2>
+
+We have moved to separately published packages from a monorepo.
+
+Please update any bookmarks to point to the new repo:
+[https://github.com/GetTerminus/terminus-oss][tokens-repo]
+
+NOTE: This package will still be published to the existing NPM package.
+
+<h2>:rotating_light:</h2>
+
+---
+
 [![CircleCI][circle-badge]][circle-link]
 [![DavidDM][david-badge]][david-link]
 [![DavidDM Dev][david-dev-badge]][david-link]
@@ -150,3 +165,4 @@ Running `yarn run cm` will start a walk-through in the CLI that will help you cr
 [gh-releases]:            https://github.com/GetTerminus/design-tokens/releases/
 [zenhub-url]:             https://github.com/GetTerminus/design-tokens#zenhub
 [david-dev-badge]:        https://david-dm.org/GetTerminus/design-tokens/dev-status.svg
+[tokens-repo]:            https://github.com/GetTerminus/terminus-oss/tree/release/libs/design-tokens
