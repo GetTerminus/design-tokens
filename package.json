@@ -149,7 +149,7 @@
     "@angular/router": "9.1.5",
     "@terminus/design-tokens": "1.0.8",
     "@w11k/ngx-componentdestroyed": "5.0.2",
-    "modern-normalize": "0.6.0",
+    "modern-normalize": "0.7.0",
     "ng-inline-svg": "10.0.0",
     "ngx-clipboard": "13.0.1",
     "ngx-webstorage-service": "4.1.0",
