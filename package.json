@@ -147,7 +147,7 @@
     "@angular/platform-browser": "9.1.5",
     "@angular/platform-browser-dynamic": "9.1.5",
     "@angular/router": "9.1.5",
-    "@terminus/design-tokens": "1.0.8",
+    "@terminus/design-tokens": "1.0.12",
     "@w11k/ngx-componentdestroyed": "5.0.2",
     "modern-normalize": "0.6.0",
     "ng-inline-svg": "10.0.0",
